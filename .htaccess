@@ -1,13 +1,11 @@
-<VirtualHost *:80>
-    ServerAdmin webmaster@localhost
-    DocumentRoot /var/www/html
+Options +FollowSymLinks
+RewriteEngine On
 
-    <Directory /var/www/html>
-        Options Indexes FollowSymLinks
-        AllowOverride All
-        Require all granted
-    </Directory>
+# Rewrite rules for clean URLs
+RewriteRule ^([a-zA-Z0-9_-]+)$ index.php?view=$1 [L,QSA]
 
-    ErrorLog ${APACHE_LOG_DIR}/error.log
-    CustomLog ${APACHE_LOG_DIR}/access.log combined
-</VirtualHost>
+# Allow access to static files
+<FilesMatch "\.(html|css|js|png|jpg|jpeg|gif|ico)$">
+    Order allow,deny
+    Allow from all
+</FilesMatch>
