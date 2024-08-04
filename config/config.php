@@ -2,10 +2,10 @@
 	/*===========================================
 	|  Datos del servidor - Data of the server  |
 	===========================================*/
-	const SERVER="localhost";
+	const SERVER="http://34.145.211.74/";
 	const DB="retroaula";
 	const USER='root';
-	const PASS="";
+	const PASS="e707f321-5c90-4fb9-a586-1cf2943ed6e6";
 
 	
 	
